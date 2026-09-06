@@ -1,0 +1,17 @@
+name: Deployment with multiple environments
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Deployment:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        environment:
+          - dev
+          - qa
+          - prod
